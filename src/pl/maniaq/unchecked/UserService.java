@@ -26,7 +26,7 @@ public class UserService {
 
     private void validateUserExistence(String user) {
         if (users.contains(user)) {
-            throw new UserExistException(String.format("User: %s exists!", user));
+            throw new UserLoginExistException(String.format("User: %s exists!", user));
         }
     }
 

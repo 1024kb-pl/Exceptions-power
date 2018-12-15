@@ -1,7 +1,6 @@
 package pl.maniaq.checked;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.LinkedList;
@@ -43,9 +42,10 @@ public class FileManager {
                 line = bufferedReader.readLine();
             }
 
+            bufferedReader.close();
             return lines;
         } catch (IOException e) {
-            throw new FileOperationException(e.getMessage(), e);
+            throw new FileOperationException(e.getMessage());
         }
     }
 }
